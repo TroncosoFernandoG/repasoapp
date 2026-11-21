@@ -16,7 +16,7 @@
 
 ## Fase 3: Tests Automatizados y Auditoría de Código
 - [x] **T11:** Escribir suite de tests unitarios y de integración verificando `RN-01` a `RN-06` (Vitest + Supertest).
-- [ ] **T12:** Ejecutar subagente `revisor.md` sobre el backend, corregir hallazgos y redactar `INFORME_PRUEBAS.md`.
+- [x] **T12:** Ejecutar subagente `revisor.md` sobre el backend, corregir hallazgos y redactar `INFORME_PRUEBAS.md`.
 
 ## Fase 4: Frontend Completo (React + Vite + TypeScript)
 - [ ] **T13:** Inicializar proyecto React + Vite + TypeScript en `frontend/` con tipos estrictos y cliente HTTP (`apiClient.ts`).
