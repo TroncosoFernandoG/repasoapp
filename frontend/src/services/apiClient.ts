@@ -7,7 +7,8 @@ import {
   StudyTopic,
   TopicQueryFilters,
   UpdateTopicPayload,
-  UpdateTopicStatusPayload
+  UpdateTopicStatusPayload,
+  PublicUser
 } from '../types/api.types';
 
 const API_BASE_URL = (import.meta.env.VITE_API_URL as string | undefined) ?? 'http://localhost:3000';
@@ -33,6 +34,28 @@ export const setStoredToken = (token: string): void => {
 
 export const clearStoredToken = (): void => {
   localStorage.removeItem(TOKEN_STORAGE_KEY);
+};
+
+const USER_STORAGE_KEY = 'repasoapp_user';
+
+export const getStoredUser = (): PublicUser | null => {
+  const raw = localStorage.getItem(USER_STORAGE_KEY);
+  if (!raw) return null;
+  try {
+    return JSON.parse(raw) as PublicUser;
+  } catch {
+    return null;
+  }
+};
+
+export const saveSession = (auth: AuthResponse): void => {
+  setStoredToken(auth.token);
+  localStorage.setItem(USER_STORAGE_KEY, JSON.stringify(auth.user));
+};
+
+export const clearSession = (): void => {
+  clearStoredToken();
+  localStorage.removeItem(USER_STORAGE_KEY);
 };
 
 async function request<T>(
