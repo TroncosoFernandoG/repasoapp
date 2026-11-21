@@ -25,6 +25,6 @@
 - [x] **T16:** Conectar manejo de estados de red (`loading`, `empty`, `error`, `success`) y tests de validadores/componentes.
 
 ## Fase 5: Despliegue en Internet y Entrega Final
-- [ ] **T17:** Desplegar base de datos en Neon y backend en Render con variables de entorno y CORS configurado.
+- [x] **T17:** Desplegar base de datos en Neon y backend en Render con variables de entorno y CORS configurado.
 - [ ] **T18:** Desplegar frontend en Netlify apuntando a la API de producción y verificar flujo end-to-end.
 - [ ] **T19:** Actualizar `README.md` con la URL pública activa y verificar checklist final de entrega.
