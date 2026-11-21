@@ -19,7 +19,7 @@
 - [x] **T12:** Ejecutar subagente `revisor.md` sobre el backend, corregir hallazgos y redactar `INFORME_PRUEBAS.md`.
 
 ## Fase 4: Frontend Completo (React + Vite + TypeScript)
-- [ ] **T13:** Inicializar proyecto React + Vite + TypeScript en `frontend/` con tipos estrictos y cliente HTTP (`apiClient.ts`).
+- [x] **T13:** Inicializar proyecto React + Vite + TypeScript en `frontend/` con tipos estrictos y cliente HTTP (`apiClient.ts`).
 - [ ] **T14:** Implementar pantallas de autenticación (`Login` y `Registro`) con persistencia segura de sesión.
 - [ ] **T15:** Implementar Dashboard principal: formulario de alta/edición, tarjetas de temas, filtros combinados y métricas.
 - [ ] **T16:** Conectar manejo de estados de red (`loading`, `empty`, `error`, `success`) y tests de validadores/componentes.
