@@ -1,5 +1,6 @@
 import { FormEvent, useState } from 'react';
 import { CreateTopicPayload, StudyTopic, UpdateTopicPayload } from '../types/api.types';
+import { validateTopicInput } from '../utils/topicValidators';
 
 interface TopicFormModalProps {
   editingTopic: StudyTopic | null;
@@ -7,14 +8,6 @@ interface TopicFormModalProps {
   onSaveCreate: (payload: CreateTopicPayload) => Promise<void>;
   onSaveEdit: (id: string, payload: UpdateTopicPayload) => Promise<void>;
 }
-
-const getTodayIso = (): string => {
-  const now = new Date();
-  const y = now.getFullYear();
-  const m = String(now.getMonth() + 1).padStart(2, '0');
-  const d = String(now.getDate()).padStart(2, '0');
-  return `${y}-${m}-${d}`;
-};
 
 export function TopicFormModal({
   editingTopic,
@@ -34,27 +27,20 @@ export function TopicFormModal({
     event.preventDefault();
     setFormError(null);
 
-    const trimmedTitle = title.trim();
-    const trimmedSubject = subject.trim();
-    const trimmedNotes = notes.trim();
+    const payload = {
+      title: title.trim(),
+      subject: subject.trim(),
+      notes: notes.trim(),
+      examDate: examDate || null,
+      isPriority
+    };
 
-    if (trimmedTitle.length < 3 || trimmedTitle.length > 120) {
-      setFormError('El título debe tener entre 3 y 120 caracteres.');
-      return;
-    }
+    const validationError = validateTopicInput(payload, {
+      isEditing: Boolean(editingTopic)
+    });
 
-    if (trimmedSubject.length < 2 || trimmedSubject.length > 60) {
-      setFormError('La materia debe tener entre 2 y 60 caracteres.');
-      return;
-    }
-
-    if (trimmedNotes.length > 1000) {
-      setFormError('Las notas no pueden superar los 1000 caracteres.');
-      return;
-    }
-
-    if (!editingTopic && examDate && examDate < getTodayIso()) {
-      setFormError('La fecha de examen no puede ser anterior a hoy.');
+    if (validationError) {
+      setFormError(validationError);
       return;
     }
 
@@ -62,19 +48,13 @@ export function TopicFormModal({
     try {
       if (editingTopic) {
         await onSaveEdit(editingTopic.id, {
-          title: trimmedTitle,
-          subject: trimmedSubject,
-          notes: trimmedNotes,
-          examDate: examDate || null
+          title: payload.title,
+          subject: payload.subject,
+          notes: payload.notes,
+          examDate: payload.examDate
         });
       } else {
-        await onSaveCreate({
-          title: trimmedTitle,
-          subject: trimmedSubject,
-          notes: trimmedNotes,
-          examDate: examDate || null,
-          isPriority
-        });
+        await onSaveCreate(payload);
       }
       onClose();
     } catch (error) {
