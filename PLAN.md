@@ -12,10 +12,10 @@
 - [x] **T7:** Implementar registro y login (`/api/auth/register` y `/api/auth/login`) con `bcrypt` y middleware JWT (`RN-01`).
 - [x] **T8:** Implementar `StudyTopicRepository` con filtrado en servidor y paginación (`RN-06`).
 - [x] **T9:** Implementar `StudyTopicService` con todas las reglas de negocio (`RN-01` a `RN-05`).
-- [ ] **T10:** Implementar `StudyTopicController`, rutas `/api/topics` y `errorHandler` global.
+- [x] **T10:** Implementar `StudyTopicController`, rutas `/api/topics` y `errorHandler` global.
 
 ## Fase 3: Tests Automatizados y Auditoría de Código
-- [ ] **T11:** Escribir suite de tests unitarios y de integración verificando `RN-01` a `RN-06` (Vitest + Supertest).
+- [x] **T11:** Escribir suite de tests unitarios y de integración verificando `RN-01` a `RN-06` (Vitest + Supertest).
 - [ ] **T12:** Ejecutar subagente `revisor.md` sobre el backend, corregir hallazgos y redactar `INFORME_PRUEBAS.md`.
 
 ## Fase 4: Frontend Completo (React + Vite + TypeScript)
