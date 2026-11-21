@@ -10,7 +10,7 @@
 - [x] **T5:** Inicializar proyecto Node + TypeScript en `backend/`, configurar `env.ts` y `.env.example`.
 - [x] **T6:** Configurar Prisma ORM y esquema relacional (`User` y `StudyTopic`) conectado a PostgreSQL (Neon).
 - [x] **T7:** Implementar registro y login (`/api/auth/register` y `/api/auth/login`) con `bcrypt` y middleware JWT (`RN-01`).
-- [ ] **T8:** Implementar `StudyTopicRepository` con filtrado en servidor y paginación (`RN-06`).
+- [x] **T8:** Implementar `StudyTopicRepository` con filtrado en servidor y paginación (`RN-06`).
 - [ ] **T9:** Implementar `StudyTopicService` con todas las reglas de negocio (`RN-01` a `RN-05`).
 - [ ] **T10:** Implementar `StudyTopicController`, rutas `/api/topics` y `errorHandler` global.
 
