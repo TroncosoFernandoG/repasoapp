@@ -27,4 +27,4 @@
 ## Fase 5: Despliegue en Internet y Entrega Final
 - [x] **T17:** Desplegar base de datos en Neon y backend en Render con variables de entorno y CORS configurado.
 - [x] **T18:** Desplegar frontend en Netlify apuntando a la API de producción y verificar flujo end-to-end.
-- [ ] **T19:** Actualizar `README.md` con la URL pública activa y verificar checklist final de entrega.
+- [x] **T19:** Actualizar `README.md` con la URL pública activa y verificar checklist final de entrega.
