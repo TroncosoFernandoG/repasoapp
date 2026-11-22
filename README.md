@@ -60,6 +60,7 @@ repasoapp/
 - **RN-05 (Indicador de urgencia):** Cálculo dinámico `isUrgent` cuando el tema no está dominado y faltan 3 días o menos para el examen.
 - **RN-06 (Ordenamiento y filtrado en servidor):** Búsqueda combinada por título, materia, estado y prioridad con paginación y resumen de métricas.
 
+```
 ---
 
 ## Ejecución Local
@@ -73,7 +74,7 @@ npm install
 npx prisma generate
 npx prisma db push
 npm run dev
-
+```
 ### 2. Frontend
 ```bash
 cd frontend
@@ -81,7 +82,7 @@ cp .env.example .env
 # Verificar VITE_API_URL="http://localhost:3000"
 npm install
 npm run dev
-
+```
 ### 3. Ejecución de Tests Automatizados
 ```bash
 # Tests unitarios y de integración del backend (Vitest + Supertest)
@@ -89,3 +90,4 @@ cd backend && npm test
 
 # Tests de validadores y estados de red del frontend (Vitest + Testing Library)
 cd frontend && npm test
+```
